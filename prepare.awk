@@ -14,6 +14,7 @@ BEGIN{ FS="\/";devId1=0;devId2=0;phase_in_1=0;phase_in_2=0;is_genuine=5;user_id1
 	user_id1 = array1[1] ;
 	phase1=$1 ;
 	phase2=array1[2] ;
+	if( phase2=="Phase2"){ phase_in_2=2} else { phase_in_2=1; }
 
 	id_plus_phase_info_2 = $5
 	split( id_plus_phase_info_2,array2," " ) ;
@@ -31,14 +32,12 @@ BEGIN{ FS="\/";devId1=0;devId2=0;phase_in_1=0;phase_in_2=0;is_genuine=5;user_id1
 
 
 	if( phase1=="Phase1" && phase2=="Phase2" ) {
-			print "devId1 is : ",devId1 ;
-			print "devId2 is : ",devId2 ;
 		if( $2 == "Fut" && $4 == "Fut" ) {
 			#print "FUT FUT" ;
 			print user_id1" "phase_in_1""devId1" "user_id2" "phase_in_2""devId2" "is_genuine" "score_nist  >> "FF_standard_nist.txt" ;
 
 		}
-		if( $2 == "Fut" && $4 == "nist" ) {
+		if( $2 == "Fut" && $4 == "Lum" ) {
 				print user_id1" "phase_in_1""devId1" "user_id2" "phase_in_2""devId2" "is_genuine" "score_nist	>> "FL_standard_nist.txt" ;
 		}
 		if( $2 == "Fut" && $4 == "Sec" ) {
@@ -46,17 +45,17 @@ BEGIN{ FS="\/";devId1=0;devId2=0;phase_in_1=0;phase_in_2=0;is_genuine=5;user_id1
 				print user_id1" "phase_in_1""devId1" "user_id2" "phase_in_2""devId2" "is_genuine" "score_nist	>> "FS_standard_nist.txt" ;
 
 		}
-		if( $2 == "nist" && $4 == "Fut" ) {
+		if( $2 == "Lum" && $4 == "Fut" ) {
 				print user_id1" "phase_in_1""devId1" "user_id2" "phase_in_2""devId2" "is_genuine" "score_nist	>> "LF_standard_nist.txt" ;
 
 		}
 	
-		if( $2 == "nist" && $4 == "nist" ) {
+		if( $2 == "Lum" && $4 == "Lum" ) {
 
 				print user_id1" "phase_in_1""devId1" "user_id2" "phase_in_2""devId2" "is_genuine" "score_nist	>> "LL_standard_nist.txt" ;
 		}
 
-		if( $2 == "nist" && $4 == "Sec" ) {
+		if( $2 == "Lum" && $4 == "Sec" ) {
 
 				print user_id1" "phase_in_1""devId1" "user_id2" "phase_in_2""devId2" "is_genuine" "score_nist	>> "LS_standard_nist.txt" ;
 		}
@@ -64,7 +63,7 @@ BEGIN{ FS="\/";devId1=0;devId2=0;phase_in_1=0;phase_in_2=0;is_genuine=5;user_id1
 
 				print user_id1" "phase_in_1""devId1" "user_id2" "phase_in_2""devId2" "is_genuine" "score_nist	>> "SF_standard_nist.txt" ;
 		}
-		if( $2 == "Sec" && $4 == "nist" ) {
+		if( $2 == "Sec" && $4 == "Lum" ) {
 
 				print user_id1" "phase_in_1""devId1" "user_id2" "phase_in_2""devId2" "is_genuine" "score_nist	>> "SL_standard_nist.txt" ;
 		}
