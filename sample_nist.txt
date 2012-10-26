@@ -1,0 +1,5 @@
+Phase1/Fut/10001.xyt Phase2/Fut/10001.xyt 493.000000
+Phase1/Fut/10001.xyt Phase1/Fut/10002.xyt 5.000000
+Phase1/Fut/10001.xyt Phase2/Fut/10009.xyt 6.000000
+Phase1/Fut/10001.xyt Phase2/Fut/10016.xyt 4.000000
+Phase1/Fut/10001.xyt Phase2/Sec/10001.xyt 8.000000
