@@ -21,8 +21,8 @@ BEGIN{ FS="\/";devId1=0;devId2=0;phase_in_1=0;phase_in_2=0;is_genuine=5;user_id1
 	sub( /\.xyt/,"",array2[1]) ;
 	user_id2 = array2[1] ;
 	score_nist=array2[2] ;
-	#score_nist = score_nist%200 ;
-	#score_nist = score_nist/200 ;
+	score_nist = score_nist%200 ;
+	score_nist = score_nist/200 ;
 	#print "user_id2 is : "user_id2 ;
 	#print "score is : "score;
 
